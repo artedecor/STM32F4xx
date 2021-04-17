@@ -36,3 +36,4 @@ build
 *.d
 *.o
 *.su
+*.mk
