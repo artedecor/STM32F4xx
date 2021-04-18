@@ -38,3 +38,4 @@ build
 *.su
 *.mk
 .cproject
+*.o
