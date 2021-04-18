@@ -1178,6 +1178,7 @@ static bool driver_setup (settings_t *settings)
     __HAL_RCC_TIM4_CLK_ENABLE();
     __HAL_RCC_TIM5_CLK_ENABLE();
     __HAL_RCC_TIM9_CLK_ENABLE();
+    __HAL_RCC_TIM12_CLK_ENABLE();
 
     GPIO_InitTypeDef GPIO_Init = {0};
 
@@ -1278,7 +1279,7 @@ static bool driver_setup (settings_t *settings)
         GPIO_Init.Pin = SPINDLE_PWM_BIT;
         GPIO_Init.Mode = GPIO_MODE_AF_PP;
         GPIO_Init.Pull = GPIO_NOPULL;
-        GPIO_Init.Alternate = GPIO_AF1_TIM1;
+        GPIO_Init.Alternate = GPIO_AF9_TIM12;
         HAL_GPIO_Init(SPINDLE_PWM_PORT, &GPIO_Init);
         GPIO_Init.Alternate = 0;
     }
