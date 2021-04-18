@@ -40,3 +40,4 @@ build
 .cproject
 *.o
 *.prefs
+*.o
