@@ -46,3 +46,4 @@ GRBL Driver STM32F401 Release F407.launch
 *.elf
 *.list
 Release F407/GRBL Driver STM32F401.map
+*.o
