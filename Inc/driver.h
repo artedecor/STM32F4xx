@@ -119,7 +119,7 @@
 #define PULSE_TIMER_IRQn            timerINT(PULSE_TIMER_N)
 #define PULSE_TIMER_IRQHandler      timerHANDLER(PULSE_TIMER_N)
 
-#define SPINDLE_PWM_TIMER_N         1
+#define SPINDLE_PWM_TIMER_N         12
 #define SPINDLE_PWM_TIMER           timer(SPINDLE_PWM_TIMER_N)
 
 #define DEBOUNCE_TIMER_N            9
@@ -203,7 +203,7 @@
 #endif
 
 #if EEPROM_ENABLE|| KEYPAD_ENABLE || (TRINAMIC_ENABLE && TRINAMIC_I2C)
-  #if defined(NUCLEO_F411) || defined(NUCLEO_F446)
+  #if defined(NUCLEO_F411) || defined(NUCLEO_F446) || defined(STM32F407xx)
     #define I2C_PORT 1 // GPIOB, SCL_PIN = 8, SDA_PIN = 9
   #else
     #define I2C_PORT 2 // GPIOB, SCL_PIN = 10, SDA_PIN = 11
