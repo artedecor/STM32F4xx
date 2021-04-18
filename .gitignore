@@ -41,3 +41,8 @@ build
 *.o
 *.prefs
 *.o
+GRBL Driver STM32F401 Release F407.launch
+*.bin
+*.elf
+*.list
+Release F407/GRBL Driver STM32F401.map
