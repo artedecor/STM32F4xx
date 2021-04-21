@@ -16,8 +16,12 @@ RM := rm -rf
 -include keypad/subdir.mk
 -include grbl/subdir.mk
 -include eeprom/subdir.mk
+-include USB_DEVICE/Target/subdir.mk
+-include USB_DEVICE/App/subdir.mk
 -include Startup/subdir.mk
 -include Src/subdir.mk
+-include Middlewares/ST/STM32_USB_Device_Library/Core/Src/subdir.mk
+-include Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/subdir.mk
 -include Drivers/STM32F4xx_HAL_Driver/Src/subdir.mk
 -include subdir.mk
 -include objects.mk
@@ -68,8 +72,8 @@ all: main-build
 main-build: GRBL\ Driver\ STM32F401.elf secondary-outputs
 
 # Tool invocations
-GRBL\ Driver\ STM32F401.elf: $(OBJS) $(USER_OBJS) F:\GitHub\STM32F4xx\STM32F407VE_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "GRBL Driver STM32F401.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"F:\GitHub\STM32F4xx\STM32F407VE_FLASH.ld" --specs=nosys.specs -Wl,-Map="GRBL Driver STM32F401.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+GRBL\ Driver\ STM32F401.elf: $(OBJS) $(USER_OBJS) F:\GitHub\STM32F4xx\STM32F407CEUX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "GRBL Driver STM32F401.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"F:\GitHub\STM32F4xx\STM32F407CEUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="GRBL Driver STM32F401.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
